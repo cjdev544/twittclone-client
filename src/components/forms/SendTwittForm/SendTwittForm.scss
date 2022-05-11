@@ -1,0 +1,56 @@
+@import '../../../scss/index.scss';
+
+.send-twitt-form {
+  .body {
+    display: flex;
+
+    img {
+      border-radius: 50%;
+      height: 50px;
+      margin-right: 10px;
+      width: 50px;
+    }
+  }
+
+  span {
+    bottom: 70px;
+    color: $font-grey;
+    position: absolute;
+    right: 20px;
+  }
+
+  .footer {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+
+    .icon {
+      align-items: center;
+      background-color: transparent;
+      border-radius: 50%;
+      display: flex;
+      height: 32px;
+      justify-content: center;
+      margin-left: 54px;
+      width: 32px;
+
+      &:hover {
+        box-shadow: inset 0px 0px 3px 13px rgba(0, 0, 0, 0.2);
+        cursor: pointer;
+      }
+    }
+
+    svg {
+      color: $primary;
+      font-size: 18px;
+    }
+
+    button {
+      align-content: center;
+      border-radius: 50px;
+      display: flex;
+      font-size: 16px;
+      padding: 4px 15px 4px 15px;
+    }
+  }
+}

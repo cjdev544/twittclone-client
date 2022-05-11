@@ -1,0 +1,41 @@
+@import '../../../scss/index.scss';
+
+.auth-right {
+  align-items: center;
+  display: flex;
+
+  > div {
+    margin: 0 auto;
+    width: 400px;
+
+    img {
+      margin-bottom: 20px;
+      width: 100px;
+    }
+
+    h2 {
+      font-size: 30px;
+      font-weight: bold;
+      margin-bottom: 70px;
+    }
+
+    h3 {
+      font-size: 20px;
+      font-weight: bold;
+      margin-bottom: 30px;
+    }
+
+    button {
+      border-radius: 50px;
+      display: block;
+      font-size: 20px;
+      font-weight: bold;
+      padding: 5px 0;
+      width: 100%;
+
+      &:first-of-type {
+        margin-bottom: 20px;
+      }
+    }
+  }
+}

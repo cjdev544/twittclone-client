@@ -1,0 +1,67 @@
+@import '../../../scss/index.scss';
+
+.banner-avatar {
+  background-color: $background-dark-light;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 200px;
+  margin-bottom: 60px;
+  position: relative;
+
+  .avatar {
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 50%;
+    border: 4px solid $border-dark;
+    bottom: -72px;
+    height: 134px;
+    left: 20px;
+    position: absolute;
+    width: 134px;
+  }
+
+  button {
+    border-radius: 50px;
+    bottom: -55px;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 5px 15px 5px 15px;
+    position: absolute;
+    right: 20px;
+
+    &.user {
+      background-color: $background-booton-light !important;
+      border-color: $background-booton-light !important;
+      color: $font-dark;
+
+      &:hover {
+        color: $font-dark;
+        opacity: 0.9;
+      }
+    }
+
+    &.auth {
+      background-color: $background-grey-dark !important;
+      border: 2px solid $border-grey !important;
+      color: $font-light;
+
+      &:hover {
+        opacity: 0.6;
+      }
+    }
+
+    &.unFollow {
+      background-color: $background-grey-dark !important;
+      border: 2px solid $border-grey !important;
+      color: $font-light;
+
+      &:hover {
+        border: 2px solid red !important;
+        color: red;
+        opacity: 0.6;
+      }
+    }
+  }
+}

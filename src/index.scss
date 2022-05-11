@@ -1,0 +1,68 @@
+@import './scss/index.scss';
+
+body {
+  background-color: $background-grey-dark;
+  color: $font-light;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.btn {
+  box-shadow: none !important;
+}
+
+.btn.btn-primary {
+  background-color: $primary;
+  border-color: $primary;
+
+  &:hover {
+    background-color: rgba(26, 145, 218, 1);
+  }
+}
+
+.btn.btn-outline-primary {
+  border-color: $primary;
+  color: $primary;
+
+  &:hover,
+  &:active,
+  &:focus {
+    background-color: rgba(29, 261, 241, 0.1);
+  }
+}
+
+input.form-control,
+textarea.form-control {
+  background-color: $background-dark-light;
+  border: 0;
+  border-bottom: 1px solid $border-grey;
+  border-radius: 0;
+  color: $font-light !important;
+  margin-bottom: 10px;
+
+  &:focus {
+    background-color: $background-dark-light;
+    border-bottom: 1px solid $primary;
+    box-shadow: none;
+  }
+}
+
+// Emoji
+.emoji-picker {
+  background-color: $background-grey-dark;
+  bottom: 0;
+  height: 350px;
+  left: 25%;
+  position: absolute;
+  width: 400px;
+  z-index: 1100;
+}

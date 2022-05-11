@@ -1,0 +1,69 @@
+@import '../../../scss/index.scss';
+
+.user-info {
+  margin: 20px;
+  padding-top: 20px;
+
+  * {
+    margin: 0;
+  }
+
+  svg {
+    fill: $font-grey;
+    height: 15px;
+    width: 15px;
+  }
+
+  h2 {
+    font-size: 18px;
+  }
+
+  .username {
+    color: $font-grey;
+    font-size: 16px;
+  }
+
+  .biography {
+    margin: 10px 0;
+    white-space: pre-line;
+  }
+
+  .create {
+    color: $font-grey;
+    margin-bottom: 10px;
+  }
+
+  .otherInfo {
+    align-items: center;
+    display: flex;
+
+    p,
+    a {
+      color: $font-grey;
+      padding-right: 20px;
+    }
+
+    a {
+      color: $primary;
+    }
+  }
+
+  .follow {
+    display: flex;
+
+    p {
+      color: $font-grey;
+      cursor: pointer;
+      margin-right: 20px;
+
+      &:hover {
+        text-decoration: underline;
+        text-decoration-color: $font-light;
+      }
+    }
+
+    span {
+      color: $font-light;
+    }
+  }
+}

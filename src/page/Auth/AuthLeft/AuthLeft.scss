@@ -1,0 +1,34 @@
+@import '../../../scss//index.scss';
+
+.auth-left {
+  align-items: center;
+  background-color: $primary-light;
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+  overflow: hidden;
+  position: relative;
+
+  img {
+    max-width: 150%;
+    position: absolute;
+    right: -35%;
+  }
+
+  div {
+    z-index: 1;
+
+    h2 {
+      align-items: center;
+      display: flex;
+      font-size: 25px;
+      font-weight: bold;
+      margin-bottom: 40px;
+
+      svg {
+        margin-right: 20px;
+        width: 40px !important;
+      }
+    }
+  }
+}
