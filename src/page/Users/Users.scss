@@ -1,0 +1,49 @@
+@import '../../scss/index.scss';
+
+.users {
+  &__header {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+
+    h2 {
+      font-size: 22px;
+      margin-bottom: 0;
+    }
+
+    input {
+      border-radius: 50px;
+      background-color: $background-dark-light;
+      border: 0;
+      color: $font-light;
+      padding: 5px 20px;
+      width: 50%;
+
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+
+  &__options {
+    display: flex !important;
+
+    .btn.btn-primary {
+      background-color: transparent !important;
+      border-bottom: 1px solid $border-grey !important;
+      border-radius: 0;
+      border: 0;
+      font-weight: bold;
+      padding: 15px 0;
+
+      &:hover {
+        background-color: rgba(29, 161, 242, 0.1) !important;
+      }
+
+      &:active {
+        border-bottom: 3px solid $primary;
+      }
+    }
+  }
+}

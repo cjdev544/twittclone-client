@@ -11,4 +11,12 @@
       margin-bottom: 0;
     }
   }
+
+  &__tiwtts {
+    h3 {
+      border-bottom: 1px solid $border-grey;
+      font-size: 18px;
+      padding: 15px;
+    }
+  }
 }

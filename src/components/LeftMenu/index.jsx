@@ -25,12 +25,14 @@ const LeftMenu = () => {
   return (
     <>
       <div className='left-menu'>
-        <img src={LogoWhite} className='logo' alt='Logo' />
+        <Link to='/'>
+          <img src={LogoWhite} className='logo' alt='Logo' />
+        </Link>
         <Link to='/'>
           <FontAwesomeIcon icon={faHome} />
           Inicio
         </Link>
-        <Link to='/'>
+        <Link to='/users'>
           <FontAwesomeIcon icon={faUsers} />
           Usuarios
         </Link>

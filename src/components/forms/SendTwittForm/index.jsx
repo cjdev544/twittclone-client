@@ -1,22 +1,25 @@
 import { useState } from 'react'
-import { Button, Form } from 'react-bootstrap'
+import { Button, Form, Spinner } from 'react-bootstrap'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faFaceSmile } from '@fortawesome/free-solid-svg-icons'
 import { EmojiButton } from '@joeattardi/emoji-button'
+import { toast } from 'react-toastify'
 
 import useAuth from '../../../hooks/useAuth'
+import useTwitt from '../../../hooks/useTwitt'
 import AvatarNoFound from '../../../assets/png/avatar.png'
 import './SendTwittForm.scss'
 
 const SendTwittForm = ({ setShowModal }) => {
   const [message, setMessage] = useState('')
   const [isDisabled, setIsDisabled] = useState(true)
+  const [loading, setLoading] = useState(false)
   const { userAuth } = useAuth()
+  const { goCreateTwitt } = useTwitt()
 
   const picker = new EmojiButton()
 
   const handleEmoji = () => {
-    console.log('entro')
     picker.togglePicker()
     picker.on('emoji', (selection) => {
       setMessage(message + selection.emoji)
@@ -34,12 +37,20 @@ const SendTwittForm = ({ setShowModal }) => {
     }
   }
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
-    console.log('enviando...')
-    setShowModal(false)
+    setLoading(true)
+    try {
+      await goCreateTwitt(message)
+      setShowModal(false)
+      toast.success('Mensaje enviado correctamente')
+    } catch (err) {
+      console.log(err)
+      toast.error('Error al enviar el twitt. Intentelo de nuevo')
+    }
+    setLoading(false)
   }
-  console.log(userAuth)
+
   return (
     <Form onSubmit={handleSubmit} className='send-twitt-form'>
       <div className='body'>
@@ -58,7 +69,7 @@ const SendTwittForm = ({ setShowModal }) => {
           <FontAwesomeIcon icon={faFaceSmile} onClick={handleEmoji} />
         </div>
         <Button type='submit' disabled={isDisabled}>
-          Enviar
+          {loading ? <Spinner animation='border' /> : 'Enviar'}
         </Button>
       </div>
     </Form>

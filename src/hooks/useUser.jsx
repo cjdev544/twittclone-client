@@ -29,6 +29,19 @@ const useUser = () => {
     return { dataUser: dataUser?.getUser, loadingUser, errorUser }
   }
 
+  const getDataUserId = (userId) => {
+    const {
+      data: dataUser,
+      loading: loadingUser,
+      error: errorUser,
+    } = useQuery(GET_USER, {
+      variables: {
+        getUserId: userId,
+      },
+    })
+    return { dataUser: dataUser?.getUser, loadingUser, errorUser }
+  }
+
   const updateDataUser = async (id, newData) => {
     const { data, error } = await updateUser({
       variables: {
@@ -74,6 +87,7 @@ const useUser = () => {
 
   return {
     getDataUser,
+    getDataUserId,
     updateDataUser,
   }
 }

@@ -1,0 +1,29 @@
+@import '../../../scss/index.scss';
+
+.twitt {
+  border-bottom: 1px solid $border-grey;
+  display: flex;
+  padding: 10px 20px;
+
+  .avatar {
+    height: 50px;
+    margin-right: 20px;
+    width: 50px;
+  }
+
+  .name {
+    color: $font-light;
+    text-decoration: none;
+
+    p {
+      font-weight: bold;
+      margin: 0;
+    }
+
+    span {
+      color: $font-grey;
+      font-weight: normal;
+      margin-left: 5px;
+    }
+  }
+}

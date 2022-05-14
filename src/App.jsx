@@ -1,12 +1,14 @@
 import { ToastContainer } from 'react-toastify'
 
 import useAuth from './hooks/useAuth'
+import useFollow from './hooks/useFollow'
 import RouterApp from './routes/RouterApp'
 import Auth from './page/Auth'
 import BasicSpinner from './components/BasicSpinner'
 
 const App = () => {
   const { userAuth } = useAuth()
+  useFollow()
 
   if (userAuth === undefined) return <BasicSpinner />
 
