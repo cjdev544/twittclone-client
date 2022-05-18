@@ -7,6 +7,7 @@ import TwittList from '../../components/TwittList'
 import BannerAvatar from '../../components/User/BannerAvatar'
 import UserInfo from '../../components/User/UserInfo'
 import './User.scss'
+import Error404 from '../Error404'
 
 const User = () => {
   const { username } = useParams()
@@ -20,7 +21,7 @@ const User = () => {
 
   if (loadingUser || loadingTwittsUser) return <BasicSpinner />
 
-  if (errorUser) return <h1 className='error'>Error al cargar usuario</h1>
+  if (errorUser) return <Error404 />
   if (errorTwittUser)
     return <h2>Error al buscar los mensajes, intente de nuevo</h2>
 

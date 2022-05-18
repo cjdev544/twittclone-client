@@ -100,3 +100,21 @@ export const FOLLOW_NO_FOLLOW = gql`
     followNoFollow(username: $username)
   }
 `
+
+export const SEARCH_USERS = gql`
+  query SearchUsers($search: String!) {
+    searchUsers(search: $search) {
+      id
+      name
+      lastname
+      username
+      email
+      biography
+      avatar
+      banner
+      website
+      ubication
+      createAt
+    }
+  }
+`

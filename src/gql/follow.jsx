@@ -25,7 +25,13 @@ export const GET_FOLLOWERS = gql`
       name
       lastname
       username
+      email
+      biography
       avatar
+      banner
+      website
+      ubication
+      createAt
     }
   }
 `
@@ -37,7 +43,13 @@ export const GET_FOLLOWEDS = gql`
       name
       lastname
       username
+      email
+      biography
       avatar
+      banner
+      website
+      ubication
+      createAt
     }
   }
 `

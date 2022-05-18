@@ -1,0 +1,75 @@
+@import '../../../index.scss';
+
+.user-list {
+  border-bottom: 1px solid $border-grey;
+  padding: 15px 30px;
+
+  &:hover {
+    background-color: $background-dark-light;
+  }
+
+  p {
+    color: $font-light;
+    line-height: 20px;
+    margin-bottom: 0;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  &__flex {
+    display: flex;
+    justify-content: space-between;
+
+    &-info {
+      color: $font-light;
+
+      h5 {
+        font-size: 16px;
+        font-weight: bold;
+        margin: 0;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+
+      p {
+        color: $font-grey;
+        margin-bottom: 10px;
+      }
+    }
+  }
+
+  button {
+    border-radius: 50px;
+    font-size: 16px;
+    font-weight: bold;
+    margin: 8px;
+    padding: 5px 15px 5px 15px;
+
+    &.user {
+      background-color: $background-booton-light !important;
+      border-color: $background-booton-light !important;
+      color: $font-dark;
+
+      &:hover {
+        color: $font-dark;
+        opacity: 0.9;
+      }
+    }
+
+    &.unFollow {
+      background-color: $background-grey-dark !important;
+      border: 2px solid $border-grey !important;
+      color: $font-light;
+
+      &:hover {
+        border: 2px solid red !important;
+        color: red;
+        opacity: 0.6;
+      }
+    }
+  }
+}

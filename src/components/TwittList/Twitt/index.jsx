@@ -18,7 +18,6 @@ const Twitt = ({ twitt }) => {
   const date = formatDistance(dateSend, Date.now(), {
     locale: esLocale,
   })
-  console.log(date)
 
   return (
     <div className='twitt'>

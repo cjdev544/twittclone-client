@@ -2,8 +2,6 @@ import Twitt from './Twitt'
 import './TwittList.scss'
 
 const TwittList = ({ twitts }) => {
-  console.log(twitts)
-
   return (
     <div className='twitt-list'>
       {twitts?.map((twitt) => (

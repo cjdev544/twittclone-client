@@ -21,3 +21,14 @@ export const GET_USER_TWITTS = gql`
     }
   }
 `
+
+export const GET_ALL_TWITTS = gql`
+  query GetAllFollowedsTwitts {
+    getAllFollowedsTwitts {
+      id
+      userId
+      message
+      createAt
+    }
+  }
+`

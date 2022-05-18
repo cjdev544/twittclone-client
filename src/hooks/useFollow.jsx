@@ -83,7 +83,7 @@ const useFollow = () => {
     return data
   }
 
-  // Update data
+  // Update data Cache ************************************
   const updateFolloweds = (userPage) => {
     const query = GET_FOLLOWEDS
     cache.updateQuery(
@@ -109,8 +109,12 @@ const useFollow = () => {
         },
       },
       (data) => {
-        return {
-          getFollowers: [...data.getFollowers, userAuth],
+        if (data?.getFollowers) {
+          return {
+            getFollowers: [...data.getFollowers, userAuth],
+          }
+        } else {
+          return null
         }
       }
     )
@@ -128,6 +132,15 @@ const useFollow = () => {
         }
       }
     )
+
+    const query4 = FOLLOW_NO_FOLLOW
+    cache.updateQuery(
+      {
+        query: query4,
+        variables: { username: userPage.username },
+      },
+      (data) => ({ followNoFollow: !data.followNoFollow })
+    )
   }
 
   const updateUnFolloweds = (userPage) => {
@@ -141,7 +154,6 @@ const useFollow = () => {
         },
       },
       (data) => {
-        console.log(userAuth)
         const newArray = data?.getFolloweds.filter(
           (follow) => follow.id !== userPage.id
         )
@@ -160,12 +172,15 @@ const useFollow = () => {
         },
       },
       (data) => {
-        console.log(data)
-        const newArray = data?.getFollowers.filter(
-          (follow) => follow.id !== userAuth.id
-        )
-        return {
-          getFollowers: newArray,
+        if (data?.getFollowers) {
+          const newArray = data?.getFollowers.filter(
+            (follow) => follow.id !== userAuth.id
+          )
+          return {
+            getFollowers: newArray,
+          }
+        } else {
+          return null
         }
       }
     )
@@ -180,6 +195,15 @@ const useFollow = () => {
           getNoFolloweds: [...data.getNoFolloweds, userPage],
         }
       }
+    )
+
+    const query4 = FOLLOW_NO_FOLLOW
+    cache.updateQuery(
+      {
+        query: query4,
+        variables: { username: userPage.username },
+      },
+      (data) => ({ followNoFollow: !data.followNoFollow })
     )
   }
 

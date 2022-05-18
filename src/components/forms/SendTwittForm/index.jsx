@@ -43,10 +43,10 @@ const SendTwittForm = ({ setShowModal }) => {
     try {
       await goCreateTwitt(message)
       setShowModal(false)
-      toast.success('Mensaje enviado correctamente')
+      toast.success('Publicación creada correctamente')
     } catch (err) {
       console.log(err)
-      toast.error('Error al enviar el twitt. Intentelo de nuevo')
+      toast.error('Error al crear la publicación. Intentelo de nuevo')
     }
     setLoading(false)
   }

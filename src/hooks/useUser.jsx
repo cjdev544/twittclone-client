@@ -1,20 +1,21 @@
-import { gql, useApolloClient, useMutation, useQuery } from '@apollo/client'
+import { useLazyQuery, useMutation, useQuery } from '@apollo/client'
 import { toast } from 'react-toastify'
 
 import useAuth from './useAuth'
 import {
   GET_USER,
+  SEARCH_USERS,
   UPDATE_USER,
   UPLOAD_AVATAR,
   UPLOAD_BANNER,
 } from '../gql/user'
 
 const useUser = () => {
-  const client = useApolloClient()
   const { getUserLogin } = useAuth()
   const [updateUser] = useMutation(UPDATE_USER)
   const [uploadBanner] = useMutation(UPLOAD_BANNER)
   const [uploadAvatar] = useMutation(UPLOAD_AVATAR)
+  const [startSearchUsers, allDataSearchUsers] = useLazyQuery(SEARCH_USERS)
 
   const getDataUser = (username) => {
     const {
@@ -85,10 +86,18 @@ const useUser = () => {
     }
   }
 
+  const getUsersSearch = (searchUser) => {
+    startSearchUsers({
+      variables: { search: searchUser },
+    })
+  }
+
   return {
+    allDataSearchUsers,
     getDataUser,
     getDataUserId,
     updateDataUser,
+    getUsersSearch,
   }
 }
 

@@ -1,4 +1,8 @@
 @import '../../scss/index.scss';
 
 .error-404 {
+  h2 {
+    padding: 15px;
+    border-bottom: 1px solid $border-grey;
+  }
 }
