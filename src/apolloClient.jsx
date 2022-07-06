@@ -18,7 +18,7 @@ const client = new ApolloClient({
   cache: new InMemoryCache(),
   link: authLink.concat(
     createUploadLink({
-      uri: 'http://localhost:4000/graphql',
+      uri: process.env.BACKEND_URL,
     })
   ),
   connectToDevTools: true,
