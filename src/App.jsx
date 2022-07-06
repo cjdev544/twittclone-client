@@ -9,11 +9,7 @@ import BasicSpinner from './components/BasicSpinner'
 const App = () => {
   const { userAuth } = useAuth()
   useFollow()
-  console.log(
-    import.meta.env.VITE_BACKEND_URL,
-    process.env.VITE_BACKEND_URL,
-    'AQUIIII'
-  )
+
   if (userAuth === undefined) return <BasicSpinner />
 
   return (
